@@ -1,0 +1,8 @@
+type Car @model {
+  id: ID!
+  type: String!
+  latitude: Float,
+  longitude: Float,
+  heading: Float,
+  orders: [Order] @connection(keyName: "byCar", fields: ["id"])
+}

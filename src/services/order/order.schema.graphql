@@ -1,0 +1,20 @@
+type Order @model
+  @key(name: "byUser", fields: ["userId"])
+  @key(name: "byCar", fields: ["carId", "createdAt"]) {
+  id: ID!
+  createdAt: ID!
+
+  type: String!
+
+  originLatitude: Float!
+  originLongitude: Float!
+
+  destLatitude: Float!
+  destLongitude: Float!
+
+  userId: ID!
+  user: User @connection(fields: ["userId"])
+
+  carId: ID!
+  car: Car @connection(fields: ["carId"])
+}
