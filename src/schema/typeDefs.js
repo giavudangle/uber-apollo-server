@@ -28,7 +28,7 @@ export const typeDefs = gql`
     deleteCar(carType:String!) : Boolean
 
     # User Mutation Type
-    createUser(username:String!,password:String!) : User!
+    createUser(email:String!,username:String!,password:String!) : User!
     updateUser(userId:ID!) : User
     deleterUser(userId:ID!) : Boolean
 
@@ -42,6 +42,11 @@ export const typeDefs = gql`
     
   # }
 
+
+  type Coordination {
+    longitude:Float,
+    latitude:Float
+  }
 
   # Attributes Type Definations
   type Car {
@@ -57,15 +62,18 @@ export const typeDefs = gql`
   type Order {
     id:ID!,
     userId:String!,
-    user:User!,
     carId:String!,
-    car:Car!
+    createdAt:String,
+    updatedAt: String,
+    origin: Coordination,
+    destination : Coordination
   }
 
 
   type User {
     id:ID!,
     username:String!,
+    email:String!,
     password:String!,
     orders:[Order!]
   }

@@ -4,17 +4,29 @@ const Schema = mongoose.Schema
 
  const UserSchema = new Schema({
 	username: {
-		type: String
+		type: String,
+		unique:true
 	},
 	email: {
-		type: String
+		type: String,
+		unique:true
 	},
-  orders:{
+	password:{
+		type:String
+	},
+  orders:[{
 		type:mongoose.Schema.Types.ObjectId,
-		ref:'Order'
+		ref:'Order',
+		default:[]	
+	}],
+	createdAt:{
+		type:Date,
+		default: new Date()
 	},
-	createdAt:Date,
-  updatedAt:Date
+  updatedAt:{
+		type:Date,
+		default: new Date()
+	}
 })
 
 module.exports = mongoose.model('User', UserSchema)

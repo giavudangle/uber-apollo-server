@@ -10,19 +10,12 @@ const CoordinaionSchema = new Schema({
 
 const OrderSchema = new Schema({
   createdAt: {
-    type: Date
+    type: Date,
+    default: new Date()
   },
   updatedAt: {
-    type: Date
-  },
-  carType: {
-    type: String
-  },
-  origin:{
-    type:CoordinaionSchema
-  },
-  destination:{
-    type:CoordinaionSchema
+    type: Date,
+    default: new Date()
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -32,9 +25,24 @@ const OrderSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref:'Car'
   },
-  createdAt:Date,
-  updatedAt:Date,
-  status:Boolean
+  status:{
+    type:Boolean,
+    default:false
+  },
+  origin: {
+    type:CoordinaionSchema,
+    default : {
+      latitude:0,
+      longitude:0
+    }
+  },
+  destination: {
+    type:CoordinaionSchema,
+    default : {
+      latitude:0,
+      longitude:0
+    }
+  }
 })
 
 

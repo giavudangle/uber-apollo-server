@@ -7,8 +7,14 @@ const CarSchema = new Schema({
   latitude: Number,
   longitude: Number,
   heading: Number,
-  createdAt:Date,
-  updatedAt:Date
+  createdAt:{
+    type:Date,
+    default: new Date()
+  },
+  updatedAt:{
+    type:Date,
+    default: new Date()
+  },
 })
 
 export default model('Car', CarSchema)
