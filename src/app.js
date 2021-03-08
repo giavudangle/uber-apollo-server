@@ -1,7 +1,7 @@
 import {ApolloServer,gql} from 'apollo-server-express'
 
-import {typeDefs} from './typeDefs'
-import {resolvers} from './resolvers'
+import {typeDefs} from './schema/typeDefs'
+import {resolvers} from './resolvers/resolvers'
 
 
 import express from 'express';
