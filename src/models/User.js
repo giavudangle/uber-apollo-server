@@ -9,7 +9,10 @@ const Schema = mongoose.Schema
 	email: {
 		type: String
 	},
-  orderId:String
+  orders:{
+		type:mongoose.Schema.Types.ObjectId,
+		ref:'Order'
+	}
 })
 
 module.exports = mongoose.model('User', UserSchema)

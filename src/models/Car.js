@@ -3,11 +3,10 @@ const Schema = mongoose.Schema
 
 
 const CarSchema = new Schema({
-	type: String,
+	carType: String,
   latitude: Number,
   longitude: Number,
   heading: Number,
-  orderId:String
 })
 
 module.exports = mongoose.model('Car', CarSchema)

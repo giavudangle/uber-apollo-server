@@ -2,34 +2,39 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
- const OrderSchema = new Schema({
-	createdAt:{
-    type:Date
+const CoordinaionSchema = new Schema({
+  longitude:Number,
+  latitude:Number
+})
+
+
+const OrderSchema = new Schema({
+  createdAt: {
+    type: Date
   },
-  type: {
-    type:String
+  updatedAt: {
+    type: Date
   },
-  originLatitude:{
-    type:Number
+  carType: {
+    type: String
   },
-  oreiginLongitude: {
-    type:Number
+  origin:{
+    type:CoordinaionSchema
   },
-  destLatitude: {
-    type:Number
-  },
-  destLongitude: {
-    type:Number
+  destination:{
+    type:CoordinaionSchema
   },
   userId: {
-    type:String
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User'
   },
   carId: {
-    type:String
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Car'
   }
 })
 
- 
+
 
 
 
