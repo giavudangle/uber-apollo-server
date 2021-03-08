@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+import { Schema as _Schema, model } from 'mongoose'
+const Schema = _Schema
 
 
 const CarSchema = new Schema({
@@ -7,9 +7,11 @@ const CarSchema = new Schema({
   latitude: Number,
   longitude: Number,
   heading: Number,
+  createdAt:Date,
+  updatedAt:Date
 })
 
-module.exports = mongoose.model('Car', CarSchema)
+export default model('Car', CarSchema)
 
 
 

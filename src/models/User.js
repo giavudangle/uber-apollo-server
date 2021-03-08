@@ -12,7 +12,9 @@ const Schema = mongoose.Schema
   orders:{
 		type:mongoose.Schema.Types.ObjectId,
 		ref:'Order'
-	}
+	},
+	createdAt:Date,
+  updatedAt:Date
 })
 
 module.exports = mongoose.model('User', UserSchema)

@@ -31,7 +31,10 @@ const OrderSchema = new Schema({
   carId: {
     type: mongoose.Schema.Types.ObjectId,
     ref:'Car'
-  }
+  },
+  createdAt:Date,
+  updatedAt:Date,
+  status:Boolean
 })
 
 

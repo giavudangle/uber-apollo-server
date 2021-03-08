@@ -3,6 +3,7 @@ import { gql } from "apollo-server-core";
 
 
 export const typeDefs = gql`
+
   # Root Type Definations
   type Query {
     # Car Query Type
@@ -37,6 +38,10 @@ export const typeDefs = gql`
 
   }
 
+  # type Subscription {
+    
+  # }
+
 
   # Attributes Type Definations
   type Car {
@@ -44,7 +49,9 @@ export const typeDefs = gql`
     carType:String!,
     latitude:Float,
     longitude:Float,
-    heading:Float
+    heading:Float,
+    createdAt:String,
+    updatedAt: String
   }
 
   type Order {
