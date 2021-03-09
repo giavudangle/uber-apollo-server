@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+import { Schema as _Schema, model } from 'mongoose'
+const Schema = _Schema
 
 
 const CoordinaionSchema = new Schema({
@@ -18,11 +18,11 @@ const OrderSchema = new Schema({
     default: new Date()
   },
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: _Schema.Types.ObjectId,
     ref:'User'
   },
   carId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: _Schema.Types.ObjectId,
     ref:'Car'
   },
   status:{
@@ -49,7 +49,7 @@ const OrderSchema = new Schema({
 
 
 
-module.exports = mongoose.model('Order', OrderSchema)
+export default model('Order', OrderSchema)
 
 
 
